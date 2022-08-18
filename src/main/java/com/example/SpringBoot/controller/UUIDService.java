@@ -10,12 +10,16 @@ import static java.util.UUID.randomUUID;
 @Service
 public class UUIDService {
     List<UUIDGenerate> uuids = new ArrayList<>();
+    private final UUIDGenerate uuid;
 
-    public void init(){
-        UUIDGenerate uuid = new UUIDGenerate();
+    public UUIDService(UUIDGenerate uuid) {
+        this.uuid = uuid;
+    }
+
+    public void init() {
+
         uuid.setUuid(randomUUID());
-        uuids.add(uuid);
-
+        boolean add = uuids.add(uuid);
     }
 
     public List<UUIDGenerate> getUuids() {
