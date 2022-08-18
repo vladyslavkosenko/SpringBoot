@@ -13,7 +13,7 @@ public class UUIDController {
     private UUIDService service;
 
     @GetMapping("/uuid")
-    public List<UUID> uuids(@RequestParam("size") int size) {
+    public List<UUIDGenerate> uuids(@RequestParam("size") int size) {
 
         for (int i = 0; i < size; i++) {
             service.init();

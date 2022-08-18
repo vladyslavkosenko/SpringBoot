@@ -2,22 +2,23 @@ package com.example.SpringBoot.controller;
 
 import org.springframework.stereotype.Service;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.util.UUID.randomUUID;
+
 @Service
 public class UUIDService {
-    List<UUID> uuids = new ArrayList<>();
+    List<UUIDGenerate> uuids = new ArrayList<>();
 
     public void init(){
-        UUID uuid = new UUID();
-        uuid.setUuid(BigDecimal.valueOf((Math.random() * 10)));
+        UUIDGenerate uuid = new UUIDGenerate();
+        uuid.setUuid(randomUUID());
         uuids.add(uuid);
 
     }
 
-    public List<UUID> getUuids() {
+    public List<UUIDGenerate> getUuids() {
         return uuids;
     }
 }
