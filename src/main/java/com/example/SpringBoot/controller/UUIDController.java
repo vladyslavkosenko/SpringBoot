@@ -21,10 +21,7 @@ public class UUIDController {
 
     @GetMapping("/uuid")
     public List<UUID> getUuidList(@RequestParam("size") int size) {
-        List<UUID> uuids = new ArrayList<>();
-        for (int i = 0; i < size; i++) {
-            uuids.add(uuidService.getUUID());
-        }
-        return uuids;
+
+        return uuidService.getUUID(size);
     }
 }
