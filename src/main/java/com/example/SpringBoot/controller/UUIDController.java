@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -20,10 +19,6 @@ public class UUIDController {
 
     @GetMapping("/uuid")
     public List<UUID> getUuidList(@RequestParam("size") int size) {
-        List<UUID> uuids = new ArrayList<>();
-        for (int i = 0; i < size; i++) {
-            uuids.add(uuidService.getUUID());
-        }
-        return uuids;
+        return uuidService.getUUID(size);
     }
 }
